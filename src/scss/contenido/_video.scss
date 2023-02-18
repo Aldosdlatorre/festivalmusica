@@ -1,0 +1,62 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.video{
+    position: relative;
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;
+
+    .overlay{
+        position: absolute;
+        background: rgba(0, 0, 0, 0.116);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    video{
+        width: auto;
+        display: block;
+        @include mix.desktop {
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video{
+    z-index: 1;
+   h2{
+    color: var.$blanco;
+    font-size: 4rem;
+    text-align: center;
+    @include mix.tablet {
+        font-size: 7rem;
+        text-align: left;
+    }
+    text-shadow: 1px 1px 2px black;
+    &::selection{
+        background-color: var.$negro;
+    }
+   }
+   p{
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: var.$rosa;
+    color: var.$blanco;
+    display: block;
+    text-align: center;
+    max-width: 30rem;
+    margin: 0 auto;
+    @include mix.tablet {
+        display: inline;
+        font-size: 2rem;
+    }
+    font-weight: 700;
+    &::selection{
+        color: var.$negro
+    }
+   }
+}

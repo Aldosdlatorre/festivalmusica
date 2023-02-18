@@ -1,0 +1,32 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.line-up{
+
+    h2{
+        text-align: center;
+        font-size: 3.6rem;
+        margin-top: 4rem;
+    }
+
+    .fechas{
+        @include mix.tablet {
+            gap: 4rem;  
+        }
+        .fecha{
+            border: 2px solid var.$blanco;
+            cursor: pointer;
+            padding: 1rem 4rem;
+            &:hover{
+                background-color: var.$blanco;
+                h3{
+                    color: var.$negro;
+                }
+                p{
+                    color: var.$negro;
+                }
+            }
+        }
+    }
+}
+

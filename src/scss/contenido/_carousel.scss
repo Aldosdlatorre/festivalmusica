@@ -1,0 +1,58 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.galeria{
+
+    h2{
+        text-align: center;
+        margin-bottom: 2rem;
+        span{
+            display: block;
+            font-size: 1.6rem;
+            padding: 1rem;
+        }
+    }
+}
+
+.d-item{
+    width: 100%;
+    height: 50rem;
+
+    .d-imagen{
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6);
+    }
+}
+
+.carousel-grid{
+    @include mix.desktop {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 4rem;
+        align-items: center;  
+    }
+    
+    .carousel-info{
+        margin-top: 4rem;
+        @include mix.desktop {
+            margin: 0;
+        }
+        background-color: var.$blanco;
+        padding:1rem 4rem;
+        .info-fecha{
+            font-weight: 700;
+            padding: 1rem 0;
+            color: var.$negro;
+        }
+        p{
+            font-size: 1.6rem;
+            color: #686868;
+        }
+    }
+}
+
+.facebook{
+    opacity: .5;
+    width: 26rem;
+}

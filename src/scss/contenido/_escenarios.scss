@@ -1,0 +1,38 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.escenarios-contenedor{
+    margin: 10rem auto;
+    display: block;
+    gap: 2rem;
+
+    @include mix.tablet {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include mix.desktop {
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+.escenario{
+    margin: 5rem auto 0;
+    text-align: center;
+    height: max-content;
+    @include mix.tablet {
+        margin: 0 auto;
+    }
+    .nombre-escenario{
+        padding: 2rem;
+    }
+
+    .calendario{
+        background-color: var.$blanco;
+        padding: 1rem 4rem;
+        li{
+            color: var.$negro;
+            padding: 1rem;
+            font-weight: 400;
+        }
+    }
+}

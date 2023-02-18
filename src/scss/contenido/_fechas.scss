@@ -1,0 +1,28 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.fechas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
+    @include mix.tablet {
+        flex-direction: row;
+    }
+    
+    .fecha{
+        text-align: center;
+        padding: 0 4rem;
+        line-height: 1.6;
+        margin-bottom: 4rem;
+        &:last-of-type{
+            margin: 0;
+        }
+        @include mix.tablet {
+            margin: 0;
+            &:nth-child(2){
+                border-left: 2px solid #575757;
+            }  
+        }
+    }
+}
